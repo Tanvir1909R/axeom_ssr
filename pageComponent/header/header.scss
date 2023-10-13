@@ -1,0 +1,66 @@
+@use "../../pages/index/index.scss" as *;
+
+@mixin pStyle() {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $font-color-secondary;
+}
+
+.border {
+  border-bottom: 1px solid #ddd;
+}
+.headerWrapper {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .header_contact {
+    display: flex;
+    align-items: center;
+    .contact {
+      display: flex;
+      align-items: center;
+      padding: 0 3.5rem;
+      &:nth-child(1) {
+        padding-left: 0;
+      }
+      &:nth-child(2){
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+      }
+      div {
+        margin-right: 9px;
+        svg {
+          font-size: 0.7rem;
+        }
+      }
+      p {
+        @include pStyle()
+      }
+    }
+  }
+  .login_Sec {
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 1.4rem;
+      margin: 0 10px;
+      cursor: pointer
+    }
+    p {
+      @include pStyle();
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@media(max-width:1100px){
+  .headerWrapper {
+    .header_contact {
+      .contact {
+        padding: 0 1rem;
+      }
+    }
+  }
+}

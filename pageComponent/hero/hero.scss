@@ -1,0 +1,139 @@
+@use "../../pages/index/index.scss" as *;
+
+#hero {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  canvas {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .hero_wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 30px;
+    }
+    .get_in_touch {
+      display: flex;
+      align-items: center;
+      svg {
+        font-size: 2.5rem;
+      }
+      .text_change {
+        position: relative;
+        width: 200px;
+        height: 100%;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        pointer-events: all;
+        &:hover {
+          transform: translateX(10px);
+        }
+        &:hover p:first-child {
+          opacity: 0;
+        }
+        &:hover p:last-child {
+          opacity: 1;
+        }
+        p {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          font-size: 1.7rem;
+          text-decoration: underline;
+          transition: all 0.2s ease;
+          &:last-child {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.pink_gradient {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 120, 201, 0.903) 0%,
+    rgba(0, 188, 212, 0) 30%
+  );
+  background-repeat: no-repeat;
+  animation: pink_gradient 18s linear forwards infinite alternate;
+}
+.blue_gradient {
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(41, 145, 210, 0.883) 0%,
+    rgba(0, 0, 0, 0) 30%
+  );
+  background-repeat: no-repeat;
+  animation: blue_gradient 18s linear forwards infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+@keyframes pink_gradient {
+  0% {
+    background-position: -580px -310px;
+  }
+  25% {
+    background-position: 470px 245px;
+  }
+  50% {
+    background-position: -396px -310px;
+  }
+  75% {
+    background-position: 32px 185px;
+  }
+  100% {
+    background-position: 487px -185px;
+  }
+}
+@keyframes blue_gradient {
+  0% {
+    background-position: 487px -185px;
+  }
+  25% {
+    background-position: -470px 178px;
+  }
+  50% {
+    background-position: -580px -310px;
+  }
+  75% {
+    background-position: 487px 185px;
+  }
+  100% {
+    background-position: 125px -185px;
+  }
+}
+
+@media (max-width: 1395px) {
+  #hero {
+    .hero_wrapper {
+      padding: 2rem;
+      align-items: center;
+      h1{
+        text-align: center;
+      }
+    }
+  }
+}

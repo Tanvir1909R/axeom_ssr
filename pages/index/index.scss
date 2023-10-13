@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+$font-color-primary: white;
+$font-color-secondary: #a1a6ad;
+$linear-bg: linear-gradient(90deg, #D355B9 0%, #592CA0 100%);
+$linear-bg-top-corner: linear-gradient(
+  22deg,
+  #D355B9 0%,
+  #592CA0 80%
+);
+$linear-bg-top: linear-gradient(
+  0deg,
+  #D355B9 0%,
+  #592CA0 100%
+);
+$heading: clamp(2.2rem, 5vw, 3rem);
+$para: clamp(0.8rem, 5vw, 0.9rem);
+
+@mixin Button() {
+  border: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  background: $linear-bg;
+  background-size: 200% 100%;
+  transition: all 0.5s ease;
+  color: white;
+  &:hover {
+    background-position: -100% 0;
+    transform: translateY(-6px);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  padding: 0 calc((100vw - 1400px) / 2);
+}
+

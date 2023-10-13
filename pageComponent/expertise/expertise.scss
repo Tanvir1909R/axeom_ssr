@@ -1,0 +1,242 @@
+@use "../../pages/index/index.scss" as *;
+
+.expertise_wrapper {
+  padding: 4rem 2rem;
+  margin-bottom: 100px;
+  .expertise_heading {
+    text-align: center;
+    h1 {
+      font-size: $heading;
+      color: $font-color-primary;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: $para;
+      color: $font-color-secondary;
+    }
+  }
+  .expertise_tab {
+    margin-top: 50px;
+    .tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .tab {
+        font-size: 1.1rem;
+        font-weight: bold;
+        background-color: transparent;
+        padding: 0.8rem 3rem;
+        color: $font-color-primary;
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 9px 0px rgba(163, 160, 160, 0.2392156863);
+        transition: all 0.4s ease;
+        &:hover {
+          background: $linear-bg;
+          color: white;
+        }
+      }
+      .tab_active {
+        background: $linear-bg;
+        color: white;
+      }
+    }
+    .tab_content_wrapper {
+      position: relative;
+      height: 413px;
+      .tab_content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        .tab_content_wrapper {
+          margin-top: 50px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+          div {
+            h4 {
+              font-size: 1.8rem;
+              color: $font-color-primary;
+            }
+            p {
+              color: $font-color-secondary;
+              margin: 45px 0;
+            }
+            ul {
+              color: $font-color-secondary;
+              padding-left: 1rem;
+              li {
+                margin-bottom: 10px;
+              }
+            }
+            button {
+              @include Button();
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      .tab_content_active {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.scan_animation {
+  position: relative;
+  height: 413px;
+}
+
+.scan_line {
+  width: 345px;
+  height: 5px;
+  background-color: blue;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.oldPage {
+  width: 345px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.paperPart {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+
+  .part_wrap {
+    position: relative;
+    img {
+      width: 345px;
+    }
+    .part {
+      position: absolute;
+      &:nth-child(2) {
+        top: 186px;
+        left: 27px;
+        width: 90px;
+      }
+      &:nth-child(3) {
+        top: 348px;
+        left: 22px;
+        width: 40px;
+      }
+      &:nth-child(4) {
+        left: 264px;
+        bottom: 22px;
+        width: 70px;
+      }
+    }
+  }
+}
+.newPage {
+  width: 345px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.lineActive {
+  animation: scan_line;
+  animation-duration: 2s;
+}
+.oldPageActive {
+  animation-name: obPaper;
+  animation-duration: 4s;
+}
+.paperPartActive {
+  animation-name: paperPart;
+  animation-delay: 4s;
+  animation-duration: 3s;
+}
+.newPageActive {
+  animation: newPaper;
+  animation-duration: 2s;
+  animation-delay: 6s;
+}
+
+@keyframes scan_line {
+  0% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+  50% {
+    top: 100%;
+    left: 0;
+    opacity: 1;
+  }
+  95% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes obPaper {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes paperPart {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes newPaper {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 830px) {
+  .expertise_wrapper {
+    .expertise_tab {
+      .tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tab_content_wrapper {
+        height: 780px;
+        .tab_content {
+          .tab_content_wrapper {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+      }
+    }
+  }
+}

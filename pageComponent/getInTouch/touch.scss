@@ -1,0 +1,70 @@
+@use "../../pages/index/index.scss" as *;
+.form_wrapper{
+    padding: 2rem;
+    h1{
+        text-align: center;
+        font-size: $heading;
+    }
+    .contact_form{
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+        form{
+            .input_control{
+                margin-bottom: 30px;
+                input,textarea{
+                    outline: none;
+                    font-size: 1.4rem;
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #757575;
+                    color: white;
+                    padding-bottom: .5rem;
+                }
+                textarea{
+                    resize: vertical;
+                    height: 200px;
+                }
+                select{
+                    background-color: transparent;
+                    color: #757575;
+                    border: none;
+                    border-bottom: 1px solid #757575;
+                    padding-bottom: .5rem;
+                    font-size: 1.3rem;
+                    outline: none;
+                    width: 100%;
+                    option{
+                        background-color: black;
+                    }
+                }
+                span{
+                    font-size: 1.3rem;
+                    margin-bottom: 20px;
+                    display: block;
+                }
+                &:last-child{
+                    display: flex;
+                    flex-direction: column;
+                    span{
+                        color: #757575;
+                    }
+                }
+            }
+            .subject_input{
+                display: flex;
+                align-items: center;
+                input{
+                    &:first-child{
+                        margin-right: 40px;
+                    }
+                }
+            }
+            button{
+                @include Button;
+                margin: auto;
+            }
+        }
+    }
+}

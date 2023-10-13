@@ -1,0 +1,32 @@
+@use "../../pages/index/index.scss" as *;
+#app {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 100vh;
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  opacity: 1;
+  background: white;
+}
+
+.swiper-pagination-bullet-active {
+  background: black;
+}

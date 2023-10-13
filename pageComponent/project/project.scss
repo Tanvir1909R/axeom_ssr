@@ -1,0 +1,123 @@
+@use "../../pages/index/index.scss" as *;
+
+.project_wrapper {
+  margin: 50px 0;
+  h1 {
+    font-size: $heading;
+    color: white;
+    margin-bottom: 70px;
+  }
+  .projects {
+    .project {
+      background: url(../../public/images/project_banner-1.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      position: relative;
+      padding: 3rem 0;
+      border-top: 1px solid $font-color-secondary;
+      border-bottom: 1px solid $font-color-secondary;
+      cursor: pointer;
+      &:hover::after {
+          border-bottom-left-radius: 50%;
+          border-bottom-right-radius: 50%;
+          top: -100%;
+      }
+      &:hover .project_wrap .title h2{
+        -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 2px;
+      }
+      &:hover .project_wrap .project_desc .desc_cta{
+        transform: translateY(0px);
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        background-color: #000000bf;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .3s ease;
+      }
+      .project_wrap {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title {
+          h2 {
+            font-size: clamp(2.7rem, 5vw, 8rem);
+            font-weight: bold;
+            position: relative;
+            z-index: 3;
+            transition: all .3s ease;
+          }
+          strong {
+            position: relative;
+            z-index: 3;
+          }
+        }
+        .project_desc {
+          h3 {
+            font-size: clamp(1.1rem, 4vw, 3rem);
+            margin-bottom: 50px;
+            font-weight: 400;
+            position: relative;
+            z-index: 3;
+          }
+          .desc_cta {
+            display: flex;
+            align-items: center;
+            transform: translateY(20px);
+            opacity: 0;
+            transition-delay: .4s;
+            transition: all .3s ease;
+            p {
+              font-weight: bold;
+              margin-right: 10px;
+            }
+            div {
+              background-color: white;
+              padding: 0.5rem 1rem;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: black;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .work_with{
+    margin: 80px 0;
+    h1{
+      font-size: $heading;
+      color: white;
+      margin-bottom: 50px;
+    }
+  }
+}
+.project_heading{
+  padding: 2rem;
+}
+
+@media(max-width:610px){
+  .project_wrapper {
+    .projects {
+      .project {
+        .project_wrap {
+          .title {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}

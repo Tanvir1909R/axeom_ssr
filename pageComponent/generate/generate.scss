@@ -1,0 +1,58 @@
+@use "../../pages/index/index.scss" as *;
+
+.generate_wrapper {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  .generate_img{
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+  .generate_desc {
+    padding: 0 5rem;
+    h1 {
+      font-size: $heading;
+      color: $font-color-primary;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: clamp(0.8rem, 5vw, 0.9rem);
+      color: $font-color-secondary;
+    }
+    div {
+      button {
+        @include Button();
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1160px) {
+  .generate_wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    .generate_img{
+        text-align: center;
+        img{
+            width: 60%;
+            object-fit: cover;
+        }
+    }
+    .generate_desc {
+      padding: 0 2rem;
+    }
+  }
+}
+@media (max-width: 720px) {
+  .generate_wrapper {
+    .generate_img{
+        img{
+            width: 100%;
+        }
+    }
+  }
+}
